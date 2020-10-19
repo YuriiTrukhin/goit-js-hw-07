@@ -5,10 +5,11 @@ const ingredients = [
     'Помидоры',
     'Зелень',
     'Приправы',
-  ];
-
-  let ul = document.body.querySelector("ul#ingredients");
-  for (let i=0; i<6; i++){
+];
+  
+let ul = document.body.querySelector("ul#ingredients");
+  
+  for (let i=0; i<ingredients.length; i++){
     let li = document.createElement("li");
     ul.append(li);
     li.textContent =ingredients[i];

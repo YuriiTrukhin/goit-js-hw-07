@@ -121,3 +121,80 @@
 //     body.insertAdjacentHTML("beforeend",`<p> Result:${result}</p>`)
 
 // })
+
+// window.addEventListener(
+//   'scroll',
+//   _.throttle(() => {
+//     console.log('Scroll event handler invocation every 2000ms.');
+//   }, 2000),
+// );
+// window.addEventListener(
+//   'scroll',
+//   _.debounce(() => {
+//     console.log('Scroll event handler invocation every 500ms.');
+//   }, 500),
+// );
+
+// import gallary from './gallary'
+
+
+// let body = document.body;
+// gallery.map(el=> {
+//   body.innerHTML += `<img width="300" src="${el.src}" data-src="${el.data}"  class="imgs" id="${el.id}">`
+// })
+// window.onload = () => {
+// const options = {
+//   root: null,
+//   rootMargin: '0px 0px 0px 0px',
+//   threshold: 1,
+// }
+// const observer = new IntersectionObserver((entries) => {
+//   // для каждой записи-целевого элемента
+//   console.log(entries);
+//   entries.forEach(entry => {
+//       // если элемент является наблюдаемым
+//       entry.isIntersecting ? entry.target.src = entry.target.dataset.src: '';
+//       // entry.isIntersecting ? console.log(entry.target.src) : '';
+//   })
+// }, options);
+// let images = document.querySelectorAll('.imgs');
+// images.forEach(el=> {
+//   observer.observe(el)
+// })
+// }
+//========================== задача
+//1) Дан ul, в нем несколько li. Под ul сделайте кнопку, по нажатию на которую в конец ul будет добавляться новый li с текстом 'пункт'.
+// Сделайте так, чтобы при клике на каждый li, ему в конец добавлялся '!'.
+// Это должно работать и для вновь добавленных li.
+// Задачу решите с помощью делегирования (то есть событие должно быть навешано на ul).
+
+// const ul = document.querySelector("ul")
+
+// ul.insertAdjacentHTML("beforeend",`<button class="button" style="width:100px" ></button>`)
+// const button = document.querySelector('button');
+// button.addEventListener("click", () => {
+//     let li = document.createElement("li")
+//     li.textContent="пункт"
+//     ul.append(li)
+// })
+
+// ul.addEventListener(("click"), (e) => {
+//     e.target.nodeName === "LI" ? e.target.textContent += "!" : "";         
+// })
+//=========================задача 2
+//2) Дан список с именами юзеров ul>li>p. Под таблицей сделайте форму form>input+input, с помощью которой можно будет добавить нового юзера в список.
+//  Сделайте так, чтобы при клике на любой елемент появлялся prompt, с помощью которого можно изменить текст имени.
+//  Задачу решите с помощью делегирования (то есть событие должно быть навешано на ul).
+// const ul = document.querySelector("ul");
+// const input = document.querySelector("input")
+
+// input.addEventListener("blur",(e)=> {
+//     let li = document.createElement("li")
+//     li.textContent=input.value
+//     ul.append(li)
+// })
+// ul.addEventListener(("click"), (e) => {
+//     let result = prompt("введите текст")
+//     console.log(e.target);
+//     e.target.nodeName === "P" ? e.target.textContent=result: "";         
+// })

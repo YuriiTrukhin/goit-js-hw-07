@@ -5,12 +5,12 @@
 // Добавь слушатели кликов на кнопки, вызовы функций и обновление интерфейса
 
 
-let counterValue = 0;
+
 const container =document.body.querySelector("div#counter");
 const incButton = document.body.querySelector('div#counter button[data-action="increment"]');
 const decButton = document.body.querySelector('div#counter button[data-action="decrement"]');
 let mainValue =document.body.querySelector("span#value")
-
+let counterValue = 0;
 const increment = (a) => a+=1;
 const decrement = (a) => a-=1;
 container.addEventListener("click",e=>{

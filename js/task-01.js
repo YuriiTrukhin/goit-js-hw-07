@@ -12,13 +12,11 @@
 
 const list = document.querySelectorAll("ul#categories>li");
 
+const fn =arr=>arr.forEach(el=> {   
+    let title = el.querySelector('h2').innerHTML; 
+    let items = el.querySelectorAll('li').length;
+    console.log(`Категории ${title}\nКолличество элементов:${items}`);
+});
 
 console.log(`В списке ${list.length} категории.`);
-const fn =arr=>arr.forEach(el=> {
-    
-
-let title=el.querySelector('h2').innerHTML 
-let items = el.querySelectorAll('li').length
-
-console.log(`Категории ${title}\nКолличество элементов:${items}`);});
 fn(list)

@@ -19,5 +19,5 @@ const images = [
   let ul = document.body.querySelector("ul#gallery")
 
   images.forEach(el=>{
-      ul.insertAdjacentHTML("afterbegin", `<li> <img src = "${el.url}" alt="${el.alt}" class ="position"></img> </li>`)
+      ul.insertAdjacentHTML("beforeend", `<li> <img src = "${el.url}" alt="${el.alt}" class ="position"></img> </li>`)
   })
